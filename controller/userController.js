@@ -1,4 +1,3 @@
-const userModel = require("../models/userModel");
 const UserModel = require("../models/userModel");
 const cloudinary = require("cloudinary").v2;
 const jwt = require("jsonwebtoken")
@@ -128,7 +127,7 @@ exports.logIn = async (req,res)=> {
 let data = req.body
 let {email , password} = data
 
-const checkEP = await userModel.findOne({email:email, password:password})
+const checkEP = await UserModel.findOne({email:email, password:password})
 
 if(!checkEP){
   return res.status(400).send({status:false , message:"email or password is incorrect"})
