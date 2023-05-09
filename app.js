@@ -19,18 +19,9 @@ cloudinary.config({
     api_secret: "mw_DjfFMzfZ2pKOWv1hNyuP8T0A"
   });
   
-//   app.post("/upload/cloud", async (req,res)=>{
-//     const file = req.files.image
-//     const result = await cloudinary.uploader.upload(file.tempFilePath,{
-//         public_id:`${Date.now()}`,
-//         resource_type: "auto",
-//         folder: "images"
-//     })
-//     res.send({url:result.url})
-//   })
 
 const user = require("./routes/userRoute")
- 
+ const Post = require("./routes/postRoute")
 app.use("/", user)
-
+app.use("/post/", Post)
 module.exports = app

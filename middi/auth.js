@@ -15,10 +15,10 @@ if(err){
  
 }
 else{ 
-
     req.userId = decoded.userId
 
     next()
+    
 }
 
 
